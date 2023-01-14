@@ -14,4 +14,5 @@ public class BookCreateRequest {
     Date addDate;
     Date readDate;
     Long userId;
+    Long authorId;
 }

@@ -12,4 +12,5 @@ public class BookUpdateRequest {
     String edition;
     Date addDate;
     Date readDate;
+    Long authorId;
 }

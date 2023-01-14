@@ -77,7 +77,7 @@ public class BookService {
         try{
             bookRepository.deleteById(bookId);
         } catch (EmptyResultDataAccessException e){ //book zaten yok, db'den empty result gelmiş
-            System.out.println("User "+bookId+" doesn't exist");
+            System.out.println("Book "+bookId+" doesn't exist");
         }
     }
 }

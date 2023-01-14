@@ -20,6 +20,11 @@ public class Book {
     @JoinColumn(name = "user_id",nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     User user;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "author_id",nullable = false)
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    Author author;
     String name;
 
     boolean isRead;
