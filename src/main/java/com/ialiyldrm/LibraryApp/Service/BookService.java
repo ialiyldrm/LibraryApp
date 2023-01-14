@@ -6,6 +6,7 @@ import com.ialiyldrm.LibraryApp.Repositories.BookRepository;
 import com.ialiyldrm.LibraryApp.Requests.BookCreateRequest;
 import com.ialiyldrm.LibraryApp.Requests.BookUpdateRequest;
 import com.ialiyldrm.LibraryApp.Responses.BookResponse;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -72,6 +73,11 @@ public class BookService {
     }
 
     public  void deleteOneBookById(Long bookId){
-        bookRepository.deleteById(bookId);
+
+        try{
+            bookRepository.deleteById(bookId);
+        } catch (EmptyResultDataAccessException e){ //book zaten yok, db'den empty result gelmiş
+            System.out.println("User "+bookId+" doesn't exist");
+        }
     }
 }
