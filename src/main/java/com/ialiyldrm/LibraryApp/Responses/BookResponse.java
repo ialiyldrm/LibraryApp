@@ -1,5 +1,6 @@
 package com.ialiyldrm.LibraryApp.Responses;
 
+import com.ialiyldrm.LibraryApp.Entities.Author;
 import com.ialiyldrm.LibraryApp.Entities.Book;
 import lombok.Data;
 
@@ -16,6 +17,7 @@ public class BookResponse {
     String commit;
     Date addDate;
     Date readDate;
+    Author author;
 
     public BookResponse(Book entity) {
         this.id=entity.getId();
@@ -27,5 +29,6 @@ public class BookResponse {
         this.commit=entity.getCommit();
         this.addDate=entity.getAddDate();
         this.readDate=entity.getReadDate();
+        this.author=entity.getAuthor();
     }
 }

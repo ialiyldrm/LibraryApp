@@ -6,7 +6,7 @@ import java.util.Date;
 
 @Data
 public class BookCreateRequest {
-    Long id;
+
     String name;
     boolean isRead;
     String commit;

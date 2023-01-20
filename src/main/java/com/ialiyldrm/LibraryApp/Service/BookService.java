@@ -40,7 +40,6 @@ public class BookService {
         if(user == null)
             return  null;
         Book toSave = new Book();
-        toSave.setId(newBookRequest.getId());
         toSave.setName(newBookRequest.getName());
         toSave.setCommit(newBookRequest.getCommit());
         toSave.setEdition(newBookRequest.getEdition());
