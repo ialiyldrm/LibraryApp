@@ -9,11 +9,13 @@ import com.ialiyldrm.LibraryApp.Requests.LibraryCreateRequest;
 import com.ialiyldrm.LibraryApp.Requests.LibraryUpdateRequest;
 import com.ialiyldrm.LibraryApp.Responses.LibraryResponse;
 import org.springframework.dao.EmptyResultDataAccessException;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+@Service
 public class LibraryService {
 
     private LibraryRepository libraryRepository;
