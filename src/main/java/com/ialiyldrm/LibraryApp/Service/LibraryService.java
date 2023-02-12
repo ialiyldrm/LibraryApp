@@ -1,10 +1,8 @@
 package com.ialiyldrm.LibraryApp.Service;
 
-import com.ialiyldrm.LibraryApp.Entities.Book;
 import com.ialiyldrm.LibraryApp.Entities.Library;
 import com.ialiyldrm.LibraryApp.Entities.User;
 import com.ialiyldrm.LibraryApp.Repositories.LibraryRepository;
-import com.ialiyldrm.LibraryApp.Requests.BookUpdateRequest;
 import com.ialiyldrm.LibraryApp.Requests.LibraryCreateRequest;
 import com.ialiyldrm.LibraryApp.Requests.LibraryUpdateRequest;
 import com.ialiyldrm.LibraryApp.Responses.LibraryResponse;
@@ -29,7 +27,7 @@ public class LibraryService {
     public List<LibraryResponse> getAllLibraries(Optional<Long> libraryId) {
         List<Library> list;
         if(libraryId.isPresent()){
-            list = libraryRepository.findByLibraryId(libraryId.get());
+            list = libraryRepository.findById(libraryId);
         }else {
             list = libraryRepository.findAll();
         }
