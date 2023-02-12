@@ -31,8 +31,7 @@ public class BookService {
         }else{
             list = bookRepository.findAll();
         }
-        return  list.stream().map(b ->{
-            return new BookResponse(b);}).collect(Collectors.toList());
+        return  list.stream().map(BookResponse::new).collect(Collectors.toList());
     }
 
     public Book createOneBook(BookCreateRequest newBookRequest) {
@@ -55,7 +54,7 @@ public class BookService {
 
     }
 
-    public Book updateOnePostById(Long bookId, BookUpdateRequest bookUpdateRequest) {
+    public Book updateOneBookById(Long bookId, BookUpdateRequest bookUpdateRequest) {
         Optional<Book> book = bookRepository.findById(bookId);
         if(book.isPresent()){
             Book toUpdate = book.get();
