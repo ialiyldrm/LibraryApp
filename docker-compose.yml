@@ -1,0 +1,25 @@
+version: "3"
+services:
+  library-app:
+    container_name: library
+    image: library-app
+    build: .
+    ports:
+      - 8080:8080
+    environment:
+      MYSQL_HOST: mysqldb
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root
+      MYSQL_PORT: 3306
+  mysqldb:
+    container_name: mysqldb
+    image: mysql
+    volumes:
+      -  librarydata:/var/lib/mysql
+    ports:
+      - 3307:3306
+    environment:
+      MYSQL_DATABASE: libraryapp
+      MYSQL_ROOT_PASSWORD: root
+volumes:
+  librarydata:
